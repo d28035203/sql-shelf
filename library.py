@@ -74,7 +74,7 @@ def issue(book_id, borrower):
  due = now + timedelta(days=LOAN_DAYS)
  c.execute(
  "INSERT INTO loans(book_id, borrower, issued_on, due_on) VALUES (?,?,?,?)",
- (book_id, borrower, now.isoformat(timespec="seconds"), due.isoformat(timespec="seconds")),
+ (book_id, borrower, now.strftime("%Y-%m-%dT%H:%M:%S"), due.strftime("%Y-%m-%dT%H:%M:%S")),
  )
  c.execute("UPDATE books SET available=0 WHERE id=?", (book_id,))
  c.commit()
