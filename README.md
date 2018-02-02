@@ -1,8 +1,6 @@
 # Library Card Chaos
 
-A **SQLite** mini library system — DBMS-lab energy from **coursework-style practice**.
-
-Issue books. Return books. Shame overdue patrons (politely).
+A **SQLite** mini library system — issue, return, overdue sass.
 
 ```bash
 python3 library.py init
