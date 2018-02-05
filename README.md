@@ -1,15 +1,26 @@
 # SQL Shelf
 
-**Subject vibe:** Database Management Systems — relational basics.
+SQLite-backed library CLI: add books, issue/return loans, list availability, and show items due soon.
 
-SQLite CLI library: add books, issue/return loans, due dates.
+## Setup
 
 ```bash
 python3 library.py init
 python3 library.py add "Operating Systems" "Galvin"
-python3 library.py issue 1 "reader42"
+python3 library.py add "Database System Concepts" "Silberschatz"
 python3 library.py list
+```
+
+## Loans
+
+```bash
+python3 library.py issue 1 alice --days 14
+python3 library.py due --within 7
 python3 library.py return 1
 ```
 
-MIT · practice project
+Database file defaults to `./library.db` (gitignored). Override with `SQL_SHELF_DB`.
+
+## License
+
+MIT
